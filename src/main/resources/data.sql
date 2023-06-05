@@ -22,7 +22,7 @@ VALUES ('First Post', 'This is the content of the first post', '2023-07-13',1,2)
        ('Third Post', 'This is the content of the third post', '2023-09-30', 1,1),
        ('Fourth Post', 'This is the content of the fourth post', '2023-10-25', 1,5),
        ('Fifth Post', 'This is the content of the fifth post', '2023-12-23', 1,3),
-       ('Sixth Post', 'Men det var så kul med ingenting och en kanin på vägen. Men då svamlar jag på för att skriva massa text för. Att kunna kolla en sak sedan. Men det var så kul med ingenting och en kanin på vägen.', '2024-02-23', 1,4);
+       ('Sixth Post', 'This is the content of the Sixth post', '2024-02-23', 1,4);
 
 
 INSERT INTO comments (content, USER_USER_ID, POST_POST_ID)
