@@ -1,10 +1,11 @@
 package com.patrik.blogg.service;
 
 import com.patrik.blogg.exception.PostNotFoundException;
-import com.patrik.blogg.model.*;
+import com.patrik.blogg.model.Author;
+import com.patrik.blogg.model.Category;
+import com.patrik.blogg.model.Post;
 import com.patrik.blogg.repository.AuthorRepository;
 import com.patrik.blogg.repository.CategoryRepository;
-import com.patrik.blogg.repository.CommentRepository;
 import com.patrik.blogg.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,17 +22,12 @@ public class PostService {
     @Autowired
     private AuthorRepository authorRepository;
 
-
-
-
-
     public List<Post> getAllPosts(){return postRepository.findAll();}
 
     public Post getPostById(Long id){
         return postRepository.findById(id)
                 .orElseThrow(() -> new PostNotFoundException(id));
     }
-
 
     public Post newPost(Post post) {
         Category category = categoryRepository.findById(post.getCategory().getCategoryId())

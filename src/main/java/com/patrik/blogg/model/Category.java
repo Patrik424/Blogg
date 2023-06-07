@@ -1,6 +1,5 @@
 package com.patrik.blogg.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -17,8 +16,6 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-
-
     @OneToMany(mappedBy = "category",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
@@ -26,12 +23,9 @@ public class Category {
     @JsonManagedReference(value = "category-post")
     private List<Post> post = new ArrayList<>();
 
-
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference(value = "category-postcategory")
     private List<PostCategory> postCategories = new ArrayList<>();
-
-
 
     public Category() {
     }

@@ -41,5 +41,3 @@ CREATE TABLE IF NOT EXISTS post_category (
                                              CONSTRAINT fk_post FOREIGN KEY (post_id) REFERENCES posts (post_id),
     CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES categories (category_id)
     );
-
-

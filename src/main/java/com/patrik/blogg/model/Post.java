@@ -33,9 +33,6 @@ public class Post {
     @JsonManagedReference(value = "post-postcategory")
     private List<PostCategory> postCategories = new ArrayList<>();
 
-
-
-
     @OneToMany(mappedBy = "post",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
@@ -48,8 +45,6 @@ public class Post {
     @ManyToOne()
     @JsonBackReference(value = "category-post")
     private Category category;
-
-
 
     public Post() {
     }
