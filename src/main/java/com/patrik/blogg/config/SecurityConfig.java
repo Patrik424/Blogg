@@ -48,11 +48,11 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         super.configure(http);
         http
                 .authorizeRequests()
-                .antMatchers("/api/post","/api/postbycategory/{id}", "/api/category").hasAnyRole("user","admin")
+                .antMatchers("/api/post", "/api/post/{id}","/api/postbycategory/{id}", "/api/category").hasAnyRole("user","admin")
                 .antMatchers("/api/author","/api/newauthor", "/api/author/{id}", "/api/editauthor/{id}", "/api/deleteauthor/{id}").hasRole("admin")
                 .antMatchers("/api/newcategory", "/api/category/{id}", "/api/editcategory/{id}", "/api/deletecategory/{id}").hasRole("admin")
                 .antMatchers("/api/comment","/api/newcomment", "/api/comment/{id}", "/api/editcomment/{id}", "/api/deletecomment/{id}").hasAnyRole("user","admin")
-                .antMatchers("/api/newpost", "/api/post/{id}","/editpost/{id}", "/api/deletepost/{id}","/post/comments/{id}").hasRole("admin")
+                .antMatchers("/api/newpost","/api/editpost/{id}", "/api/deletepost/{id}","/post/comments/{id}").hasRole("admin")
                 .antMatchers("/api/users","/api/newuser", "/api/users/{id}", "/api/user/{id}", "/api/deleteuser/{id}").hasAnyRole("user","admin")
                 .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated();

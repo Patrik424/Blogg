@@ -19,6 +19,7 @@ public class PostService {
     private PostRepository postRepository;
     @Autowired
     private CategoryRepository categoryRepository;
+
     @Autowired
     private AuthorRepository authorRepository;
 
@@ -55,5 +56,6 @@ public class PostService {
         postRepository.findById(id).orElseThrow(() -> new PostNotFoundException(id));
         postRepository.deleteById(id);
     }
+
 
 }
