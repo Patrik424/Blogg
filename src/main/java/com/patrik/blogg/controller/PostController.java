@@ -3,7 +3,6 @@ package com.patrik.blogg.controller;
 import com.patrik.blogg.model.Category;
 import com.patrik.blogg.model.Comment;
 import com.patrik.blogg.model.Post;
-import com.patrik.blogg.repository.CategoryRepository;
 import com.patrik.blogg.repository.CommentRepository;
 import com.patrik.blogg.repository.PostRepository;
 import com.patrik.blogg.service.CategoryService;
@@ -17,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(value = "http://localhost:3000")
+@CrossOrigin(value = "http://localhost:5173")
 public class PostController {
 
     private final PostService postService;

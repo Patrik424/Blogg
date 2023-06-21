@@ -48,7 +48,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         super.configure(http);
         http
                 .authorizeRequests()
-                .antMatchers("/api/post", "/api/post/{id}","/api/postbycategory/{id}", "/api/category").hasAnyRole("user","admin")
+                .antMatchers("/api/post","/api/post/{id}","/api/postbycategory/{id}", "/api/category").hasAnyRole("user","admin")
                 .antMatchers("/api/author","/api/newauthor", "/api/author/{id}", "/api/editauthor/{id}", "/api/deleteauthor/{id}").hasRole("admin")
                 .antMatchers("/api/newcategory", "/api/category/{id}", "/api/editcategory/{id}", "/api/deletecategory/{id}").hasRole("admin")
                 .antMatchers("/api/comment","/api/newcomment", "/api/comment/{id}", "/api/editcomment/{id}", "/api/deletecomment/{id}").hasAnyRole("user","admin")
@@ -66,7 +66,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOrigin("http://localhost:5173");
         config.setAllowedMethods(Arrays.asList("POST", "GET", "DELETE", "PUT"));
         config.setAllowedHeaders(List.of("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization", "Access-Control-Allow-Origin"));
         config.addAllowedHeader("Authorization");
